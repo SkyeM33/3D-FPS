@@ -1,23 +1,21 @@
 
-# Exercise 5.1—FPS
+# 3D FPS
 
-Exercise for MSCH-C220
+Project for MSCH-C220
 
-The first Godot 3D exercise, a simple first-person-controlled character.
+A 3D first person shooter-like game
 
 ## Implementation
 
 Built using Godot 4.1.1
 
-The shotgun model is from the [Weapon Pack](https://kenney.nl/assets/weapon-pack) at kenney.nl.
+## What Makes this a Game
 
 ## References
 
-None
-
 ## Future Development
 
-None
+Characters to be added, more terrain and an end to the maze to be added, and many more features and a storyline.
 
 ## Created by 
 
