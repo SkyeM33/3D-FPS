@@ -1,0 +1,13 @@
+~ Cat
+
+Cat?: wowow. you made it through the maze goodjob.
+Cat?: You wanna do quest for me?
+- Yes
+	Cat?: Yayay! Quest.
+	Cat?: Get the god orb for me please
+- No
+	Cat?: maow :( 
+#- Start again => this_is_a_node_title
+#- End the conversation => END
+
+=> END
