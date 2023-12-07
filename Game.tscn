@@ -83,7 +83,6 @@ shape = SubResource("BoxShape3D_j8spb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Pivot"]
-current = true
 script = ExtResource("2_6088l")
 
 [node name="Maze" type="Node3D" parent="."]

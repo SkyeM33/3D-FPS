@@ -1,4 +1,4 @@
-~ Cat
+~ Quest
 
 Cat?: wowow. you made it through the maze goodjob.
 Cat?: You wanna do quest for me?
@@ -10,4 +10,14 @@ Cat?: You wanna do quest for me?
 #- Start again => this_is_a_node_title
 #- End the conversation => END
 
+=> END
+
+~ Delivery
+
+Cat?: You have it! Giv me please.
+- Yes
+	Cat?: Now I am your god
+- No
+	Cat?: Aw :(
+		
 => END

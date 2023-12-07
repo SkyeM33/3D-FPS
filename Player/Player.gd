@@ -38,7 +38,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-const Balloon = preload("res://Dialogue/balloon.tscn")
+#const Balloon = preload("res://Dialogue/balloon.tscn")
 
 
 
@@ -50,7 +50,10 @@ func _on_orb_area_body_entered(body):
 	Global.orb = true
 
 
-func _on_cat_area_body_entered(body):
-	var balloon = Balloon.instantiate()
-	get_tree().current_scene.add_child(balloon)
-	balloon.start(load("res://Dialogue/Cat_Quest.dialogue"), "main")
+#func _on_cat_area_body_entered(body):
+	#var balloon = Balloon.instantiate()
+	#get_tree().current_scene.add_child(balloon)
+	#if Global.orb == false:
+		#balloon.start(load("res://Dialogue/Cat_Quest.dialogue"), "Quest")
+	#elif Global.orb == true:
+		#balloon.start(load("res://Dialogue/Cat_Quest.dialogue"), "Delivery")

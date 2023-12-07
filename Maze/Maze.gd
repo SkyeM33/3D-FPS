@@ -39,7 +39,7 @@ var height = 12  						# height of map (in tiles)
 
 func _ready():
 	randomize()
-#	make_maze()
+	make_maze()
 	
 func check_neighbors(cell, unvisited):
 	# returns an array of cell's unvisited neighbors
@@ -75,6 +75,7 @@ func make_maze():
 			unvisited.erase(current)
 		elif stack:
 			current = stack.pop_back()
+	map[0][height-1] &= N|E|S
 	for x in range(width):
 		for z in range(height):
 			var tile = tiles[map[x][z]].instantiate()
