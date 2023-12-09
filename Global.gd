@@ -4,9 +4,12 @@ var orb = false
 
 var Orb = get_node_or_null("/root/Game/Orb")
 
-func _on_area_3d_area_entered(area):
-	Global.orb = true
-	Orb.queue_free()
+var cat = false
+
+var points = 0
+
+func _ready():
+	pass #get_tree().change_scene_to_file("res://UI/main_menu.tscn")
 
 
 func _unhandled_input(event):

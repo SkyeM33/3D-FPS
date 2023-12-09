@@ -38,22 +38,45 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-#const Balloon = preload("res://Dialogue/balloon.tscn")
-
-
-
-
+const Balloon = preload("res://Dialogue/Dialogue/balloon.tscn")
 
 
 func _on_orb_area_body_entered(body):
-	$"../Orb".queue_free()
-	Global.orb = true
+	if body.name == "Player":
+		$"../Orb".queue_free()
+		Global.orb = true
+		print("got orb")
+
+func _on_cat_area_body_entered(body):
+	if body.name == "Player":
+		var balloon = Balloon.instantiate()
+		get_tree().current_scene.add_child(balloon)
+		if Global.orb == false:
+			balloon.start(load("res://Dialogue/Dialogue/Cat_Quest.dialogue"), "Quest")
+		elif Global.orb == true:
+			balloon.start(load("res://Dialogue/Dialogue/Cat_Quest.dialogue"), "Delivery")
+			
+
+		
 
 
-#func _on_cat_area_body_entered(body):
-	#var balloon = Balloon.instantiate()
-	#get_tree().current_scene.add_child(balloon)
-	#if Global.orb == false:
-		#balloon.start(load("res://Dialogue/Cat_Quest.dialogue"), "Quest")
-	#elif Global.orb == true:
-		#balloon.start(load("res://Dialogue/Cat_Quest.dialogue"), "Delivery")
+
+func _on_guard_area_body_entered(body):
+	if body.name == "Player":
+		get_tree().change_scene_to_file("res://UI/death.tscn")
+
+
+func _on_collectable_body_entered(body):
+	$"../Collectable".queue_free()
+	Global.points += 1
+	get_node("/root/Game/Player/Pivot/Camera3D/Label").text = "Score: " + str(Global.points)
+
+func _on_collectable_2_body_entered(body):
+	$"../Collectable2".queue_free()
+	Global.points += 1
+	get_node("/root/Game/Player/Pivot/Camera3D/Label").text = "Score: " + str(Global.points)
+
+func _on_collectable_3_body_entered(body):
+	$"../Collectable3".queue_free()
+	Global.points += 1
+	get_node("/root/Game/Player/Pivot/Camera3D/Label").text = "Score: " + str(Global.points)

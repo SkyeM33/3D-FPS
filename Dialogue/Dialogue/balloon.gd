@@ -1,11 +1,10 @@
 extends CanvasLayer
 
 
-
 @onready var balloon: Panel = %Balloon
+@onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
-@onready var character_label: RichTextLabel = %CharacterLabel
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -29,6 +28,10 @@ var dialogue_line: DialogueLine:
 			queue_free()
 			return
 
+		# If the node isn't ready yet then none of the labels will be ready yet either
+		if not is_node_ready():
+			await ready
+
 		dialogue_line = next_dialogue_line
 
 		character_label.visible = not dialogue_line.character.is_empty()
@@ -39,7 +42,6 @@ var dialogue_line: DialogueLine:
 
 		responses_menu.hide()
 		responses_menu.set_responses(dialogue_line.responses)
-
 
 		# Show our balloon
 		balloon.show()

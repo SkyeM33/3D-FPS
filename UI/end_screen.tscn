@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://bshfa1s43hdp8"]
+
+[ext_resource type="Script" path="res://UI/end_screen.gd" id="1_eu7uk"]
+
+[node name="EndScreen" type="Node2D"]
+script = ExtResource("1_eu7uk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1500.0
+offset_bottom = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+color = Color(0.568627, 1, 1, 1)
+
+[node name="CatEnd" type="Label" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 330.0
+offset_top = 162.0
+offset_right = 786.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 39
+text = "You gave the cat the orb"
+
+[node name="OrbEnd" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 330.0
+offset_top = 162.0
+offset_right = 786.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 39
+text = "You have the orb"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 503.0
+offset_top = 287.0
+offset_right = 568.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 35
+text = "Restart"
+
+[node name="Quit" type="Button" parent="."]
+visible = false
+offset_left = 484.0
+offset_top = 348.0
+offset_right = 590.0
+offset_bottom = 405.0
+theme_override_font_sizes/font_size = 35
+text = "Leave"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

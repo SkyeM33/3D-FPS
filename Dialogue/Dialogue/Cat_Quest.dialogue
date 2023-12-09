@@ -4,7 +4,7 @@ Cat?: wowow. you made it through the maze goodjob.
 Cat?: You wanna do quest for me?
 - Yes
 	Cat?: Yayay! Quest.
-	Cat?: Get the god orb for me please
+	Cat?: Get the god orb triangle for me please
 - No
 	Cat?: maow :( 
 #- Start again => this_is_a_node_title
@@ -12,12 +12,18 @@ Cat?: You wanna do quest for me?
 
 => END
 
+
 ~ Delivery
 
 Cat?: You have it! Giv me please.
 - Yes
 	Cat?: Now I am your god
+	set Global.cat = true
+	set get_tree().change_scene_to_file("res://UI/end_screen.tscn")
 - No
-	Cat?: Aw :(
+	Cat?: Aw :( 
+	set get_tree().change_scene_to_file("res://UI/end_screen.tscn")
 		
 => END
+
+
