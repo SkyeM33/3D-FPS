@@ -7,8 +7,8 @@ A 3D first person game in which you navigate a weird little world with collectab
 
 ## Implementation
 
-Built using Godot 4.1.1<break>
-Enemy models and some used and unused assets from Kenney.nl<break>
+Built using Godot 4.1.1<br>
+Enemy models and some used and unused assets from Kenney.nl<br>
 I added multiple endings, collectable coins, a storyline, two enemies that can kill you if you get too close, a procedurally generated maze, and a model that I made myself in blender.
 
 ## What Makes this a Game
