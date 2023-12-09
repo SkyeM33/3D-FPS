@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Player/Camera3D.gd" id="2_6088l"]
 [ext_resource type="Script" path="res://Maze/Maze.gd" id="3_v4tbl"]
 [ext_resource type="ArrayMesh" uid="uid://c0ohaqx2kh8g6" path="res://Assets/cat_.obj" id="4_uicec"]
-[ext_resource type="PackedScene" path="res://Assets/player.glb" id="5_8assm"]
+[ext_resource type="PackedScene" uid="uid://blfq3wgv7fnm8" path="res://Assets/player.glb" id="5_8assm"]
 [ext_resource type="Script" path="res://Guard.gd" id="6_gntrj"]
 [ext_resource type="Script" path="res://Collectable.gd" id="6_i841n"]
 
@@ -5606,7 +5606,6 @@ shape = SubResource("BoxShape3D_m6k5l")
 
 [node name="Guard2" parent="." instance=ExtResource("5_8assm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0811, 0, -15.2915)
-script = null
 
 [node name="GuardArea" type="Area3D" parent="Guard2"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1.04516, 0, 8.74228e-08, 0, -1, 0.0864697, 0.0737896, 0.383793)
@@ -5663,11 +5662,27 @@ material = SubResource("StandardMaterial3D_gxpjq")
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -25.2597, 0.000343323, 19.0644)
 shape = SubResource("SphereShape3D_rjhe2")
 
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Terrain container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0294, 38.3022, 0)
+radius = 5.857
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Terrain container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.237, 34.6034, 18.157)
+radius = 4.964
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="Terrain container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50.0961, 0)
+radius = 7.643
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="Terrain container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39787, 34.1283, -27.9265)
+radius = 8.536
+
 [connection signal="body_entered" from="Orb/OrbArea" to="Player" method="_on_orb_area_body_entered"]
 [connection signal="body_entered" from="CatArea" to="Player" method="_on_cat_area_body_entered"]
 [connection signal="body_entered" from="Collectable" to="Player" method="_on_collectable_body_entered"]
-[connection signal="body_entered" from="Collectable2" to="Player" method="_on_collectable_2_body_entered"]
 [connection signal="body_entered" from="Collectable2" to="Player" method="_on_collectable_body_entered"]
+[connection signal="body_entered" from="Collectable2" to="Player" method="_on_collectable_2_body_entered"]
 [connection signal="body_entered" from="Collectable3" to="Player" method="_on_collectable_3_body_entered"]
 [connection signal="body_entered" from="Collectable3" to="Player" method="_on_collectable_body_entered"]
 [connection signal="body_entered" from="GuardBody/GuardArea" to="Player" method="_on_guard_area_body_entered"]
