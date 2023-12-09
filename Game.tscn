@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ct58dqm7odekg"]
+[gd_scene load_steps=54 format=3 uid="uid://ct58dqm7odekg"]
 
 [ext_resource type="Texture2D" uid="uid://dgymuythtti17" path="res://kenney_animated-characters-3/Skins/zombieMaleA.png" id="1_o727v"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_p4rsx"]
@@ -5105,6 +5105,34 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6k5l"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ls0bb"]
+albedo_color = Color(0, 0.105882, 0.133333, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bkq0u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4o8v"]
+albedo_color = Color(0, 0.0862745, 0.109804, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eupl4"]
+albedo_color = Color(0, 0.105882, 0.129412, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_edisj"]
+material = SubResource("StandardMaterial3D_eupl4")
+radius = 5.402
+height = 8.843
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_reksw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_os7y6"]
+albedo_color = Color(0, 0.0941176, 0.105882, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_llajb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxpjq"]
+albedo_color = Color(0, 0.133333, 0.192157, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rjhe2"]
+
 [node name="Game" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -5147,6 +5175,9 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 25
 text = "Score: 0"
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Maze" type="Node3D" parent="."]
 script = ExtResource("3_v4tbl")
@@ -5583,6 +5614,54 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1.04516, 0, 8.74228e-08, 0, -1, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Guard2/GuardArea"]
 transform = Transform3D(-2.23147, 0, -1.52822e-07, 0, 4.22679, 0, 1.95081e-07, 0, -1.74808, 0.0273561, 1.93682, -0.0688963)
 shape = SubResource("BoxShape3D_m6k5l")
+
+[node name="Terrain container" type="Node3D" parent="."]
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Terrain container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6492, 0, 2.53591)
+visible = false
+inner_radius = 6.668
+outer_radius = 11.788
+material = SubResource("StandardMaterial3D_ls0bb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terrain container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8283, -1.1138, -17.8622)
+physics_material_override = SubResource("PhysicsMaterial_bkq0u")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Terrain container/StaticBody3D"]
+visible = false
+radius = 4.57
+material = SubResource("StandardMaterial3D_d4o8v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain container/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.298559, 0, 0)
+mesh = SubResource("SphereMesh_edisj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain container/StaticBody3D"]
+transform = Transform3D(11, 0, 0, 0, 10.197, 0, 0, 0, 11, 0, 0, 0)
+shape = SubResource("SphereShape3D_reksw")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Terrain container"]
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Terrain container/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83694, -5.05802, -27.1322)
+radius = 10.321
+material = SubResource("StandardMaterial3D_os7y6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain container/StaticBody3D2"]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 7.66484, 0, -26.9971)
+shape = SubResource("SphereShape3D_llajb")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Terrain container"]
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="Terrain container/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2325, 0, 18.8892)
+radius = 3.179
+material = SubResource("StandardMaterial3D_gxpjq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain container/StaticBody3D3"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -25.2597, 0.000343323, 19.0644)
+shape = SubResource("SphereShape3D_rjhe2")
 
 [connection signal="body_entered" from="Orb/OrbArea" to="Player" method="_on_orb_area_body_entered"]
 [connection signal="body_entered" from="CatArea" to="Player" method="_on_cat_area_body_entered"]
