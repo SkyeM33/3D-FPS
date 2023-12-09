@@ -3,19 +3,25 @@
 
 Project for MSCH-C220
 
-A 3D first person shooter-like game
+A 3D first person game in which you navigate a weird little world with collectables and a quest to complete.
 
 ## Implementation
 
-Built using Godot 4.1.1
+Built using Godot 4.1.1<break>
+Enemy models and some used and unused assets from Kenney.nl<break>
+I added multiple endings, collectable coins, a storyline, two enemies that can kill you if you get too close, a procedurally generated maze, and a model that I made myself in blender.
 
 ## What Makes this a Game
 
+You have a lot of agency in this world, you can wander around the strange barren landscape and choose to collect the coins or follow the quest. Even once you initiate the quest, there are multiple endings to get depending on how you choose to carry it out. The maze is randomly generated, making it a new challenge each time.
+
 ## References
+
+No direct references, but I was inspired by ENA, particularly Temptation Stairway
 
 ## Future Development
 
-Characters to be added, more terrain and an end to the maze to be added, and many more features and a storyline.
+I might work on the enemies more.
 
 ## Created by 
 
