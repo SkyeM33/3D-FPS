@@ -70,11 +70,14 @@ func _on_collectable_body_entered(body):
 	$"../Collectable".queue_free()
 	Global.points += 1
 	get_node("/root/Game/Player/Pivot/Camera3D/Label").text = "Score: " + str(Global.points)
+	
 
 func _on_collectable_2_body_entered(body):
+	var sound = get_node_or_null("/root/Game/Ting")
 	$"../Collectable2".queue_free()
 	Global.points += 1
 	get_node("/root/Game/Player/Pivot/Camera3D/Label").text = "Score: " + str(Global.points)
+	sound.play()
 
 func _on_collectable_3_body_entered(body):
 	$"../Collectable3".queue_free()
