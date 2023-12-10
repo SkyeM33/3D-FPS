@@ -9,7 +9,8 @@ A 3D first person game in which you navigate a weird, disorienting little world 
 
 Built using Godot 4.1.1<br>
 Enemy models and some used and unused assets from Kenney.nl<br>
-I added multiple endings, collectable coins, a storyline, two enemies that can kill you if you get too close, a procedurally generated maze, and a model that I made myself in blender.
+Coin sound sqeeeek_bell_ting2 by squeeek: https://freesound.org/people/sqeeeek/sounds/237105/<br>
+I added multiple endings, collectable coins, a storyline, two enemies that can kill you if you get too close, a procedurally generated maze, a sound effect for the collectables, and a model that I made myself in blender.
 
 ## What Makes this a Game
 
