@@ -14,7 +14,7 @@ I added multiple endings, collectable coins, a storyline, two enemies that can k
 
 ## What Makes this a Game
 
-You have a lot of agency in this world, you can wander around the strange barren landscape and choose to collect the coins or follow the quest given to you by a weird little cat. Even once you initiate the quest, there are multiple endings to get depending on how you choose to carry it out. The maze is randomly generated, making it a new challenge each time.
+You have a lot of agency in this world, you can wander around the strange barren landscape and choose to collect the coins or follow the quest given to you by a weird little cat. Even once you initiate the quest, there are multiple endings to get depending on how you choose to carry it out. The maze is randomly generated and the walls are hard to tell apart, making it a new challenge each time.
 
 ## References
 
