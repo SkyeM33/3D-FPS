@@ -5682,6 +5682,7 @@ radius = 8.536
 
 [node name="Ting" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_emy85")
+volume_db = 80.0
 
 [connection signal="body_entered" from="Orb/OrbArea" to="Player" method="_on_orb_area_body_entered"]
 [connection signal="body_entered" from="CatArea" to="Player" method="_on_cat_area_body_entered"]
